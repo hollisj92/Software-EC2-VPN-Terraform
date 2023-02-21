@@ -45,3 +45,29 @@ variable "team" {
   type        = string
   sensitive   = true
 }
+
+# ec2
+
+variable "ami" {
+  description = "ami code"
+  type        = string
+  sensitive   = true
+}
+
+variable "bastion_ip" {
+  description = "bastion host ip"
+  type        = string
+  sensitive   = true
+}
+
+variable "keyname" {
+  description = "keyname for ec2"
+  type        = string
+  sensitive   = true
+}
+
+variable "ec2_eip_cidr" {
+  description = "ec2 elastic ip cidr"
+  type        = string
+  sensitive   = true
+}
