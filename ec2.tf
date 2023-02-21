@@ -4,6 +4,7 @@ resource "aws_instance" "bastion_vpn_ec2" {
   key_name = "${var.keyname}"
   subnet_id = aws_subnet.east_1a_aws_subnet.id
   vpc_security_group_ids = [aws_security_group.bastion_vpn_secgroup.id]
+
   
 
   user_data = <<-EOF
@@ -27,7 +28,7 @@ resource "aws_eip" "ec2_eip_cidr" {
   vpc = true
 
   instance                  = aws_instance.bastion_vpn_ec2.id
-  associate_with_private_ip = "${var.bastion_ip}"
+  associate_with_private_ip = "${var.bastion_priv_ip}"
   depends_on                = [aws_internet_gateway.igw]
 }
 

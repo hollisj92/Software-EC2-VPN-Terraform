@@ -54,8 +54,8 @@ variable "ami" {
   sensitive   = true
 }
 
-variable "bastion_ip" {
-  description = "bastion host ip"
+variable "bastion_priv_ip" {
+  description = "bastion host private ip"
   type        = string
   sensitive   = true
 }

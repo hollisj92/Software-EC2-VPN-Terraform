@@ -26,6 +26,6 @@ resource "aws_security_group" "private_cluster_ec2" {
     from_port = 22
     to_port = 22
     protocol = "tcp"
-    cidr_blocks = [var.ec2_eip_cidr]
+    cidr_blocks = [aws_instance.bastion_vpn_ec2.private_ip]
   }
 }
